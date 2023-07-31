@@ -7,7 +7,29 @@ import Image from "next/image";
 import Link from "next/link";
 import oreka from "../../../public/oreka.svg";
 import CategoriesNav from "../categories/CategoriesNav";
-const Navbar = () => {
+
+async function getData() {
+  const res = await fetch("https://dummyjson.com/products/");
+
+  if (!res) {
+    throw new Error("failed to fetch data ");
+  }
+  return await res.json();
+}
+
+// async function searchData() {
+//   fetch("https://dummyjson.com/products/search?q=")
+//     .then((res) => res.json())
+//     .then(console.log);
+// }
+
+const Navbar = async (props) => {
+  // const searchInputRef = useRef();
+  const { products } = await getData();
+  const uniqueCategories = [
+    ...new Set(products.map((product) => product.category)),
+  ];
+  const subCategories = [...new Set(products.map((product) => product.brand))];
   return (
     <>
       <nav className="w-full h-8 flex justify-end items-center p-8 bg-slate-200 dark:bg-gray-900 dark:border-gray-700 dark:text-orange-400">
@@ -38,13 +60,18 @@ const Navbar = () => {
             <option hidden value="category">
               Category
             </option>
-            <option value="iphone">IPhone</option>
+            {uniqueCategories.map((category) => (
+              <option value={category} key={category}>
+                {category}
+              </option>
+            ))}
           </select>
           <div className="w-full flex items-center justify-center">
             <input
               type="search"
               name="search"
               placeholder="enter keywords"
+              // ref={searchInputRef}
               className="p-1 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
             />
             <SearchOutlinedIcon className="bg-orange-500 h-full w-8 rounded-l text-white p-1" />
@@ -56,7 +83,7 @@ const Navbar = () => {
           <ShoppingBagOutlinedIcon className="text-orange-500 text-3xl" />
         </div>
       </nav>
-      <CategoriesNav />
+      <CategoriesNav category={uniqueCategories} subCategories={subCategories}/>
     </>
   );
 };

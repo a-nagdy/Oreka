@@ -1,4 +1,17 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {};
 
-module.exports = nextConfig
+module.exports = nextConfig;
+module.exports = {
+  images: {
+    formats: ["image/avif", "image/webp"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "i.dummyjson.com",
+        port: "",
+        pathname: "/data/products/**",
+      },
+    ],
+  },
+};

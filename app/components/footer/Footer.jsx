@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 const Footer = () => {
   const footerContainerStyles =
     "flex justify-center items-start flex-col gap-10";
@@ -7,9 +9,11 @@ const Footer = () => {
     "flex justify-center items-start flex-col gap-5 w-full";
   return (
     <>
-      <footer className="flex justify-between items-start p-20 dark:bg-gray-900 dark:border-gray-700 dark:text-orange-400">
+      <footer className="flex justify-between items-start p-20 bg-slate-200 dark:bg-gray-900 dark:border-gray-700 dark:text-orange-400">
         <div className={footerContainerStyles}>
-          <h5 className="text-xl font-bold text-white">contact us</h5>
+          <h5 className="text-xl font-bold text-black dark:text-orange-400">
+            contact us
+          </h5>
           <ul className={footerListStyles}>
             <li>b-25 some street , city </li>
             <li>tel: +2323123123</li>
@@ -17,7 +21,9 @@ const Footer = () => {
           </ul>
         </div>
         <div className={footerContainerStyles}>
-          <h5 className="text-xl font-bold text-white">support</h5>
+          <h5 className="text-xl font-bold text-black dark:text-orange-400">
+            support
+          </h5>
           <ul className={footerListStyles}>
             <li>how it works</li>
             <li>help center / FAQ</li>
@@ -26,7 +32,9 @@ const Footer = () => {
           </ul>
         </div>
         <div className={footerContainerStyles}>
-          <h5 className="text-xl font-bold text-white">About Company</h5>
+          <h5 className="text-xl font-bold text-black dark:text-orange-400">
+            About Company
+          </h5>
           <ul className={footerListStyles}>
             <li>about us</li>
             <li>contact us</li>
@@ -36,12 +44,20 @@ const Footer = () => {
             <li>messages</li>
           </ul>
         </div>
-        <div className="flex justify-center items-start flex-col gap-10 text-sky-100">
-          <h5 className="text-xl font-bold text-white">follow us</h5>
+        <div className="flex justify-center items-start flex-col gap-10 text-black dark:text-orange-400">
+          <h5 className="text-xl font-bold text-black dark:text-orange-400">
+            follow us
+          </h5>
           <ul className="flex justify-center items-center gap-5">
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>
+              <Link href="/facebook"></Link>
+            </li>
+            <li>
+              <Link href="/facebook"></Link>
+            </li>
+            <li>
+              <Link href="/facebook"></Link>
+            </li>
           </ul>
         </div>
       </footer>
