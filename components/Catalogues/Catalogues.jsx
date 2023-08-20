@@ -20,9 +20,10 @@ const Catalogues = async () => {
               <Link href={trimmedName}>
                 <Image
                   src={imageCat.image}
-                  width={100}
-                  height={100}
+                  width={80}
+                  height={80}
                   className="m-auto w-[5rem] h-[5rem]"
+                  alt={imageCat.name}
                 />
               </Link>
               <p>{imageCat.name}</p>
