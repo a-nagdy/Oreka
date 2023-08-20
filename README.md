@@ -24,9 +24,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## TODOS
 
-**Add To Cart**
-**Payments**
-**Slider Navigate To Product**
-**DashBoard**
-**DataBase for Products**
-**Optimization For Images And Loading Screens**
+- [ ] **Add To Cart**
+- [ ] **Payments**
+- [ ] **Slider Navigate To Product**
+- [ ] **DashBoard**
+- [ ] **DataBase for Products**
+- [ ] **Optimization For Images And Loading Screens**
