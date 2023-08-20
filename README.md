@@ -6,27 +6,27 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 # Packages & Libraries Used
 
-### Next & Next-Auth
+#### Next & Next-Auth
 
-### MongoDB (Database)
+#### MongoDB (Database)
 
-### Cookie & bcrypt
+#### Cookie & bcrypt
 
-### Formik
+#### Formik
 
-### jsonwebtoken
+#### jsonwebtoken
 
-### TailWind (css)
+#### TailWind (css)
 
-### Swiper (For Sliders)
+#### Swiper (For Sliders)
 
-### Material Icons
+#### Material Icons
 
 ## TODOS
 
-**Add To Cart**
-**Payments**
-**Slider Navigate To Product**
-**DashBoard**
-**DataBase for Products**
-**Optimization For Images And Loading Screens**
+- [ ] **Add To Cart**
+- [ ] **Payments**
+- [ ] **Slider Navigate To Product**
+- [ ] **DashBoard**
+- [ ] **DataBase for Products**
+- [ ] **Optimization For Images And Loading Screens**
