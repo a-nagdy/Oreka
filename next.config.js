@@ -1,9 +1,13 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+const dns = require("dns");
 
-module.exports = nextConfig;
-module.exports = {
+dns.setDefaultResultOrder("ipv4first");
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    serverActions: true,
+  },
   images: {
+    domains: ["student.valuxapps.com"],
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
       {
@@ -15,3 +19,5 @@ module.exports = {
     ],
   },
 };
+
+module.exports = nextConfig;

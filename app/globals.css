@@ -10,7 +10,19 @@
         Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-input:focus-visible {
-    outline: none;
-    border: none;
+input:focus-visible,
+input:focus {
+    outline: inherit;
+    border: unset;
+}
+
+input,
+label,
+textarea,
+form {
+    text-transform: none;
+}
+
+.slider_custom_margin {
+    margin: 40px 100px !important;
 }
