@@ -6,21 +6,21 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 # Packages & Libraries Used
 
-### Next & Next-Auth
+#### Next & Next-Auth
 
-### MongoDB (Database)
+#### MongoDB (Database)
 
-### Cookie & bcrypt
+#### Cookie & bcrypt
 
-### Formik
+#### Formik
 
-### jsonwebtoken
+#### jsonwebtoken
 
-### TailWind (css)
+#### TailWind (css)
 
-### Swiper (For Sliders)
+#### Swiper (For Sliders)
 
-### Material Icons
+#### Material Icons
 
 ## TODOS
 
