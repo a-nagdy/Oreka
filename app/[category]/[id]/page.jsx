@@ -18,12 +18,10 @@ const ProductPage = async ({ data, params }) => {
     const response = await fetch(url, options);
     const { data: fetchedProduct } = await response.json();
     const products = fetchedProduct.data; // Assign fetched product to the declared variable
-    // console.log(params.id);
     const foundProduct = products.find(
       (product) =>
         product.name.toLowerCase().split(" ")[0] + product.id === params.id
     );
-    // console.log(foundProduct);
 
     if (foundProduct) {
       const categoryId = foundProduct.id;
@@ -37,7 +35,6 @@ const ProductPage = async ({ data, params }) => {
   } catch (error) {
     console.error(error);
   }
-  // console.log(productData);
   return (
     <ProductComponent
       name={productData.data.name}

@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 
 export async function POST(request) {
   try {
-    const { fName, lName, email, password } = await request.json();
+    const { fName, lName, email, password, phone } = await request.json();
     // hashing the password before sending to DB
     const hashedPassword = await hash(password, 12);
     // Check if user with the provided email already exists
@@ -15,9 +15,22 @@ export async function POST(request) {
       },
     });
 
+    const existingPhone = await prisma.user.findUnique({
+      where: {
+        phone: phone,
+      },
+    });
+
     if (existingUser) {
       return NextResponse.json(
-        { error: "Email Already Exist" },
+        { emailError: "Email Already Exist" },
+        { status: 400 }
+      );
+    }
+
+    if (existingPhone) {
+      return NextResponse.json(
+        { phoneError: "Phone Already Exist" },
         { status: 400 }
       );
     }
@@ -29,6 +42,7 @@ export async function POST(request) {
         lName,
         email,
         password: hashedPassword,
+        phone,
       },
     });
 
@@ -37,6 +51,8 @@ export async function POST(request) {
     return NextResponse.json({
       message: "User Created Successfully",
       user: newUser,
+      welcomeMessage:
+        "Thanks for registering! We hope you enjoy our website and products.",
     });
   } catch (error) {
     console.error("Error:", error);

@@ -9,6 +9,5 @@ export async function GET(request) {
       status: 401,
     });
   }
-  console.log("GET API", session);
   return NextResponse.json({ authenticated: !!session });
 }

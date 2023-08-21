@@ -33,10 +33,10 @@ const MainBanners = async () => {
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-        // autoplay={{
-        //   delay: 2500,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 4500,
+          disableOnInteraction: false,
+        }}
         className="h-full"
         loop={true}
       >

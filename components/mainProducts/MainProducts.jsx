@@ -9,9 +9,6 @@ import Slider from "../slider/Slider";
 const MainProducts = ({ params }) => {
   const [productsData, setProductsData] = useState([]); // State to hold fetched data
   const [loading, setLoading] = useState(false);
-  console.log(params);
-  let skeletonCards = Array(3).fill(0);
-
   const getData = async () => {
     const url = `/api/products`;
     setLoading(true);
@@ -42,9 +39,9 @@ const MainProducts = ({ params }) => {
       </div>
       {loading ? (
         <div className="flex justify-center items-center gap-5 w-full">
-          {skeletonCards.map((index) => (
-            <LoadingSkeleton key={index} />
-          ))}
+          <LoadingSkeleton />
+          <LoadingSkeleton />
+          <LoadingSkeleton />
         </div>
       ) : (
         <Slider count={5} delay={3000} styles="h-[30rem] my-10">

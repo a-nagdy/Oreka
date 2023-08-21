@@ -17,4 +17,10 @@ model User {
   lName  String
   email     String @unique
   password  String
+  phone  String? @unique
+  role Role @default(USER)
+}
+enum Role {
+  USER
+  ADMIN
 }

@@ -6,8 +6,7 @@ import EntryPoints from "../components/entrypoints/EntryPoints";
 import MainBanners from "../components/mainBanners/MainBanners";
 import MainProducts from "../components/mainProducts/MainProducts";
 
-export default async function Home({params}) {
-  console.log(params)
+export default async function Home({ params }) {
   return (
     <StoreProvider>
       <Suspense fallback={<Loading className="top-0" />}>
